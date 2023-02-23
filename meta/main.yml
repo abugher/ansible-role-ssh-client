@@ -1,4 +1,0 @@
----
-dependencies:
-  - role:       'dns_client'
-    when:       skipdeps is not defined

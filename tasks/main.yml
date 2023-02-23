@@ -1,2 +1,3 @@
 ---
+- include:              '../tasks/dependencies.yml'
 - include:              '../tasks/template_files.yml'
