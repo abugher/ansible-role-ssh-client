@@ -1,6 +1,6 @@
 ---
 dependencies:
-  - 'dns_client'
+  - 'dns-client'
 template_files:
   - owner:              'root'
     group:              'root'
