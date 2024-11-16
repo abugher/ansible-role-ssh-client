@@ -6,10 +6,6 @@
 # Thus, host-specific definitions should be at the beginning of the
 # configuration file, and defaults at the end.
 
-GSSAPIDelegateCredentials yes
-HashKnownHosts no
-CheckHostIP no
-
 {% for host in groups['sshd'] %}
 Host {{ host }}
   HostName {{ host }}.neuronpointer.net
@@ -20,3 +16,12 @@ Host {{ host }}
 Host *
     SendEnv LANG LC_*
     GSSAPIAuthentication yes
+
+
+GSSAPIDelegateCredentials yes
+HashKnownHosts no
+CheckHostIP no
+
+ControlMaster auto
+ControlPath  ~/.ssh-socket-%r@%h-%p
+ControlPersist 600
