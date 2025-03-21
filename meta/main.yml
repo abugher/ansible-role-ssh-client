@@ -1,5 +1,0 @@
----
-dependencies:
-  - role:     'dns-client'
-    tags:     
-      - 'dependency'
