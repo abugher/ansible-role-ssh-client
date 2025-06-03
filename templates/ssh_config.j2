@@ -27,5 +27,6 @@ Host *
   CheckHostIP                   no
 
   ControlMaster                 auto
+  {# This should match control_path in ansible.cfg . #}
   ControlPath                   /tmp/ssh-connection-%r@%h-%p
   ControlPersist                600
