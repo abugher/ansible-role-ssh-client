@@ -28,5 +28,6 @@ Host *
 
   ControlMaster                 auto
   {# This should match control_path in ansible.cfg for ansible master hosts. #}
-  ControlPath                   {{ tmp_dir|default('/tmp') }}/%u@%r@%h@%p
+  #ControlPath                   {{ tmp_dir|default('/tmp') }}/%u@%r@%h@%p
+  ControlPath                   ~/.%r@%h@%p
   ControlPersist                600
