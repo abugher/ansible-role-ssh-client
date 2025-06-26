@@ -28,6 +28,11 @@ Host *
 
   ControlMaster                 auto
   {# This should match control_path in ansible.cfg for ansible master hosts. #}
-  #ControlPath                   {{ tmp_dir|default('/tmp') }}/%u@%r@%h@%p
-  ControlPath                   ~/.%r@%h@%p
+  # Avoid referring to home directory.  Some system users don't have write access.
+  #
+  # While it would seem nice to spell out connection details in the file name,
+  # there is a 108 character limit on the expanded file path, $tmp_dir is long
+  # for some hosts, and it seems like a hash gets appended to the specified
+  # file name.  Keep the file name specification short.
+  ControlPath                   {{ tmp_dir|default('/tmp') }}/%u.%C
   ControlPersist                600
