@@ -17,7 +17,7 @@ Host {{ host }}
   HostName                      {{ host }}.neuronpointer.net
   Port                          {{ hostvars[host]['ssh_unique_port'] | default(22) }}
 
-Host testvm-{{ host }}
+Host staging-{{ host }}
   HostName                      127.0.0.1
   Port                          {{ hostvars[host]['ssh_unique_port'] }}
 

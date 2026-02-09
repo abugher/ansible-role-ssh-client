@@ -1,2 +1,5 @@
 ---
 - include_tasks:        '../tasks/template_files.yml'
+- include_tasks:        '../tasks/known_hosts.yml'
+  vars:
+    known_hosts:        "{{ groups['sshd'] }}"
