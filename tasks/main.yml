@@ -3,3 +3,6 @@
 - include_tasks:        'tasks/common/known_hosts.yml'
   vars:
     known_hosts:        "{{ groups['sshd'] }}"
+- include_tasks:        'tasks/common/known_hosts.yml'
+  vars:
+    known_hosts:        "{{ groups['known-hosts'] }}"
