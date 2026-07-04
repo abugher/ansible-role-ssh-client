@@ -12,11 +12,13 @@
 # Indentation is aesthetic only.  
 
 
-{% for host in groups['sshd'] %}
+{% for host in groups['sshd'] + groups['sshd-extended'] + groups['known-hosts'] %}
 Host {{ host }}
   HostName                      {{ host }}.neuronpointer.net
   Port                          {{ hostvars[host]['ssh_unique_port'] | default(22) }}
 
+{% endfor %}
+{% for host in groups['sshd'] + groups['sshd-extended'] %}
 Host staging-{{ host }}
   HostName                      127.0.0.1
   Port                          {{ hostvars[host]['ssh_unique_port'] }}

@@ -2,7 +2,4 @@
 - include_tasks:        'tasks/common/template_files.yml'
 - include_tasks:        'tasks/common/known_hosts.yml'
   vars:
-    known_hosts:        "{{ groups['sshd'] }}"
-- include_tasks:        'tasks/common/known_hosts.yml'
-  vars:
-    known_hosts:        "{{ groups['known-hosts'] }}"
+    known_hosts:        "{{ groups['sshd'] + groups['sshd-extended'] + groups['known-hosts'] }}"
